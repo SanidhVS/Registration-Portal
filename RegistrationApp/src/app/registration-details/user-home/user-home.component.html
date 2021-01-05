@@ -1,0 +1,76 @@
+<div class="custom-jumbotron bg-dark" >
+    <h1 class="display-4 text-center" style="font-weight: 600;">WELCOME USER</h1>
+</div>
+<button type="button" class="btn btn-danger" (click)="logOut()">Log out</button>
+<button type="button" class="btn btn-danger" (click)="generateUserId()">Show Details</button>
+<div class="row">
+<form novalidate #form = "ngForm" class="registration-detail-form col-md-6" (submit)="onSubmit(form)" >
+    <input type="hidden" name = "registrationId" 
+    [value]="service.formData.registrationId">
+    <div class="form-group">
+        <label>USER NAME</label>
+        <input class="form-control form-control-lg" placeholder="User name" name="userName"
+        #userName="ngModel" 
+        [(ngModel)] = "service.formData.userName" required
+        [class.invalid]="userName.invalid && userName.touched" readonly>
+    </div>
+    <div class="form-group">
+        <label>PASSWORD</label>
+        <input class="form-control form-control-lg" placeholder="Password" name="password"
+        #password="ngModel" 
+        [(ngModel)] = "service.formData.password" required
+        [class.invalid]="password.invalid && password.touched" >
+    </div>
+    <div class="form-group">
+        <label>FIRST NAME</label>
+        <input class="form-control form-control-lg" placeholder="First Name" name="firstName"
+        #firstName="ngModel"
+        [(ngModel)] = "service.formData.firstName" required
+        [class.invalid]="firstName.invalid && firstName.touched">
+    </div>
+    <div class="form-group">
+        <label>LAST NAME</label>
+        <input class="form-control form-control-lg" placeholder="Last Name" name="lastName"
+        #lastName="ngModel" 
+        [(ngModel)] = "service.formData.lastName" required
+        [class.invalid]="lastName.invalid && lastName.touched">
+    </div>
+    <div class="form-group">
+        <label>EMAIL</label>
+        <input class="form-control form-control-lg" placeholder="xyz@abcdef.com" name="email"
+        #email="ngModel" 
+        [(ngModel)] = "service.formData.email" required
+        [class.invalid]="email.invalid && email.touched">
+    </div>
+    <br>
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block custom-block-button" type = "submit" [disabled]="form.invalid" >SUBMIT</button>
+    </div>
+</form>
+
+<div class="col-md-6" style="border-left: 2px solid #ccc;">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>User Name</th>
+                <th>Password</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td (click)="populateForm(currentUser)">{{currentUser.userName}}</td>
+                <td (click)="populateForm(currentUser)">{{currentUser.password}}</td>
+                <td (click)="populateForm(currentUser)">{{currentUser.firstName}}</td>
+                <td (click)="populateForm(currentUser)">{{currentUser.lastName}}</td>
+                <td (click)="populateForm(currentUser)">{{currentUser.email}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

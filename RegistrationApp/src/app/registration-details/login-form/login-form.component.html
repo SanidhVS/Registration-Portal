@@ -1,0 +1,13 @@
+<form #form = 'ngForm' class = 'mb-4' autocomplete="off" (submit)="onSubmit(form)">
+    <div class="form-group">
+        <label style="padding: 1rem;">Username  :   </label>
+        <input #userNAME="ngModel" name = "userNAME" [(ngModel)]="service.userNAME" required>
+    </div>
+    <div class="form-group">
+        <label style="padding: 1rem;">Password   :</label>
+        <input #passWORD="ngModel" name = "passWORD" [(ngModel)]="service.passWORD" type="password" required>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-dark"  [disabled]='form.invalid'>Sign in</button>
+    </div>
+</form>
