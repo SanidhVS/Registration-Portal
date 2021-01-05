@@ -37,7 +37,7 @@ input.invalid{
 }
 .perfect-centering {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left:50%;
     transform: translate(-50%,-50%);
     background-color: rgb(211, 211, 211);
