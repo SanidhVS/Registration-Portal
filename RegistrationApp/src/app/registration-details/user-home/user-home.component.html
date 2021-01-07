@@ -1,8 +1,9 @@
 <div class="custom-jumbotron bg-dark" >
     <h1 class="display-4 text-center" style="font-weight: 600;">WELCOME USER</h1>
 </div>
-<button type="button" class="btn btn-danger" (click)="logOut()">Log out</button>
-<button type="button" class="btn btn-danger" (click)="generateUserId()">Show Details</button>
+<button type="button" class="btn btn-danger" (click)="generateUserId()" style="font-weight: 600;">Show Details</button>
+<button type="button" class="btn btn-danger" (click)="logOut()" style="margin-left: 84.3%;border-radius: 5%;font-weight: 600;">Log out</button>
+
 <div class="row">
 <form novalidate #form = "ngForm" class="registration-detail-form col-md-6" (submit)="onSubmit(form)" >
     <input type="hidden" name = "registrationId" 
