@@ -47,6 +47,6 @@ export class LoginFormComponent implements OnInit {
     if(this.flag==0){
      this.toastr.warning("Invalid Username or password");
     }
-
+    form.reset();
   }
 }
